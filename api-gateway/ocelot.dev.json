@@ -1,0 +1,482 @@
+{
+  "Routes": [
+
+    //Users
+    //Registration super admin token required
+    {
+      "DownstreamPathTemplate": "/admin/realms/master/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/users",
+      "UpstreamHttpMethod": [ "POST" ],
+      "Key": "register",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    },
+
+    //Login
+
+    {
+      "DownstreamPathTemplate": "/realms/master/protocol/openid-connect/token",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "Key": "login"
+    },
+
+
+
+    //Logout
+
+    {
+      "DownstreamPathTemplate": "/realms/master/protocol/openid-connect/logout",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/logout",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    //Get UserByEmail
+    //email = ..... in query 
+    {
+      "DownstreamPathTemplate": "/admin/realms/master/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/getUser",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    },
+
+    //Get UserById
+
+    {
+      "DownstreamPathTemplate": "/admin/realms/master/users/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/getUser/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    },
+
+    //Map role to user
+
+    {
+      "DownstreamPathTemplate": "/admin/realms/master/users/{id}/role-mappings/realm",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/userRole/{id}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    },
+
+    //Update User
+
+    {
+      "DownstreamPathTemplate": "/admin/realms/master/users/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/updateUser/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    },
+
+    //Delete User
+
+    {
+      "DownstreamPathTemplate": "/admin/realms/master/users/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/deleteUser/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    },
+
+    //Answers
+    {
+      "DownstreamPathTemplate": "/Answers",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Answers",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Answers/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Answers/{id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Answers/game/{gameId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Answers/game/{gameId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Answers/question/{questionId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Answers/question/{questionId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+
+    //Cards
+    {
+      "DownstreamPathTemplate": "/Cards",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cards",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Cards/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cards/{id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cards/cardsets/{cardSetId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Cards/themes/{themeId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cards/themes/{themeId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+
+
+    //CardSets
+    {
+      "DownstreamPathTemplate": "/CardSets",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CardSets",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "cardsetsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/CardSets/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CardSets/{id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "SwaggerKey": "cardsetsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+
+
+    //Themes
+    {
+      "DownstreamPathTemplate": "/Themes",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Themes",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Themes/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Themes/{id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+
+
+    // Game
+    {
+      "DownstreamPathTemplate": "/Game",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8092
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Game",
+      "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "gameapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    }
+
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "answersapi",
+      "Config": [
+        {
+          "Name": "Answers Microservice",
+          "Version": "v1",
+          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+        }
+      ]
+    },
+
+    {
+      "Key": "cardsapi",
+      "Config": [
+        {
+          "Name": "Cards Microservice",
+          "Version": "v1",
+          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "cardsetsapi",
+      "Config": [
+        {
+          "Name": "CardsSets Microservice",
+          "Version": "v1",
+          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "themesapi",
+      "Config": [
+        {
+          "Name": "Themes Microservice",
+          "Version": "v1",
+          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "gameapi",
+      "Config": [
+        {
+          "Name": "Game Microservice",
+          "Version": "v1",
+          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7140"
+  }
+}
+
