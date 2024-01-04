@@ -78,6 +78,7 @@ builder.Services.AddScoped<IClaimsTransformation, CustomClaimsTransformer>();
 var app = builder.Build();
 app.UseHttpsRedirection();
 
+
 app.UsePathBase("/gateway");
 
 // Configure the HTTP request pipeline.
