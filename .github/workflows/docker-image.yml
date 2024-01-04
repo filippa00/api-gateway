@@ -1,4 +1,4 @@
-name: api-gateway-docker-image
+name: api-gateway
 
 on:
   push:
