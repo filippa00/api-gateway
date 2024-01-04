@@ -13,6 +13,6 @@ RUN dotnet publish api-gateway -c Release -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
-WORKDIR /app
-COPY --from=build-env /app/out .
+WORKDIR /api-gateway
+COPY --from=build-env /api-gateway/out .
 ENTRYPOINT ["dotnet", "api-gateway.dll"]
