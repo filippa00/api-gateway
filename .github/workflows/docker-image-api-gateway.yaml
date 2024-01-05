@@ -1,4 +1,4 @@
-name: Docker image for api gateway
+name: Docker images for API Gateway and Keycloak
 
 on:
   push:
@@ -6,33 +6,40 @@ on:
       - main
 
 jobs:
-  build:
+  build_api_gateway:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
-      -
-        name: Login to Docker Hub
+
+      - name: Login to Docker Hub for API Gateway
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and test
+
+      - name: Build and push API Gateway image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          target: build-env
-          load: true
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
+          context: ./Docker/api-gateway  # Path to the API Gateway Dockerfile
           push: true
-          target: runtime
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-image:latest
+
+  build_keycloak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub for Keycloak
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Keycloak image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./Docker/keycloak  # Path to the Keycloak Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/keycloak-image:latest
