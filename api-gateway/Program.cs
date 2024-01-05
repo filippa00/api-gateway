@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args)
     ;
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    serverOptions.ListenAnyIP(8091); // Listen for HTTP on port 8091
+    serverOptions.ListenAnyIP(8092); // Listen for HTTP on port 8092
 
 });
 

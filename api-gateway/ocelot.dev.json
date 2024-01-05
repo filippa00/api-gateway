@@ -167,7 +167,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 8092
         }
       ],
@@ -365,13 +365,13 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 8092
         }
       ],
       "UpstreamPathTemplate": "/api/Themes",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "themesapi",
+      "SwaggerKey": "themesapi"
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer"
       //},
@@ -478,5 +478,8 @@
   "GlobalConfiguration": {
     "BaseUrl": "https://api-gateway-image-test.apps.ocp5-inholland.joran-bergfeld.com"
   }
+  //"GlobalConfiguration": {
+  //  "BaseUrl": "https://localhost:7140"
+  //}
 }
 
