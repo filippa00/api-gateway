@@ -245,7 +245,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "http://mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 8092
         }
       ],
@@ -372,12 +372,12 @@
       "UpstreamPathTemplate": "/api/Themes",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "SwaggerKey": "themesapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
