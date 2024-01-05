@@ -164,7 +164,7 @@
     //Answers
     {
       "DownstreamPathTemplate": "/Answers",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -173,17 +173,17 @@
       ],
       "UpstreamPathTemplate": "/api/Answers",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "answersapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "answersapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Answers/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -202,7 +202,7 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/game/{gameId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -221,7 +221,7 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/question/{questionId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -242,7 +242,7 @@
     //Cards
     {
       "DownstreamPathTemplate": "/Cards",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -251,17 +251,17 @@
       ],
       "UpstreamPathTemplate": "/api/Cards",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "cardsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "cardsapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -280,7 +280,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -299,7 +299,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/themes/{themeId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -321,7 +321,7 @@
     //CardSets
     {
       "DownstreamPathTemplate": "/CardSets",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -340,7 +340,7 @@
     },
     {
       "DownstreamPathTemplate": "/CardSets/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -362,7 +362,7 @@
     //Themes
     {
       "DownstreamPathTemplate": "/Themes",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -381,7 +381,7 @@
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -403,7 +403,7 @@
     // Game
     {
       "DownstreamPathTemplate": "/Game",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -476,7 +476,7 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:7140"
+    "BaseUrl": "https://api-gateway-image-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com/"
   }
 }
 
