@@ -16,3 +16,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /api-gateway
 COPY --from=build-env /api-gateway/out .
 ENTRYPOINT ["dotnet", "api-gateway.dll"]
+
