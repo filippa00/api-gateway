@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /../api-gateway
 
 # Copy csproj and restore as distinct layers
-COPY api-gateway/*.csproj ./api-gateway/
+COPY /../api-gateway/*.csproj /../api-gateway/
 COPY *.sln ./
 #RUN dotnet restore
 
