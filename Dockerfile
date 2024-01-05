@@ -17,4 +17,5 @@ WORKDIR /api-gateway
 COPY --from=build-env /api-gateway/out .
 ENTRYPOINT ["dotnet", "api-gateway.dll"]
 # Expose API ports
-EXPOSE 7140
+EXPOSE 8092
+EXPOSE 8085
