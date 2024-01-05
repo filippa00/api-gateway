@@ -10,6 +10,10 @@ using System.Runtime.InteropServices;
 
 var builder = WebApplication.CreateBuilder(args)
     ;
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(8090); // Listen for HTTP on port 8090
+});
 
 // Add services to the container.
 builder.Services.AddControllers();
