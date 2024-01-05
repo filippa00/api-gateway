@@ -476,7 +476,7 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://api-gateway-image-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com/"
+    "BaseUrl": "https://api-gateway-image-test.apps.ocp5-inholland.joran-bergfeld.com"
   }
 }
 
