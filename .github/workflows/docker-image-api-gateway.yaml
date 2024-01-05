@@ -21,7 +21,7 @@ jobs:
       - name: Build and push API Gateway image
         uses: docker/build-push-action@v5
         with:
-          context: ./api-gateway-docker  # Path to the API Gateway Dockerfile
+          #context: ./api-gateway-docker  # Path to the API Gateway Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-image:latest
 
