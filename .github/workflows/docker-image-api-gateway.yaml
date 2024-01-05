@@ -21,7 +21,7 @@ jobs:
       - name: Build and push API Gateway image
         uses: docker/build-push-action@v5
         with:
-          context: ./Docker/api-gateway  # Path to the API Gateway Dockerfile
+          context: ./api-gateway-docker  # Path to the API Gateway Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-image:latest
 
@@ -40,6 +40,6 @@ jobs:
       - name: Build and push Keycloak image
         uses: docker/build-push-action@v5
         with:
-          context: ./Docker/keycloak  # Path to the Keycloak Dockerfile
+          context: ./keycloak  # Path to the Keycloak Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/keycloak-image:latest
