@@ -167,7 +167,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "localhost",
           "Port": 8092
         }
       ],
@@ -245,7 +245,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "localhost",
           "Port": 8092
         }
       ],
@@ -365,7 +365,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "localhost",
           "Port": 8092
         }
       ],
