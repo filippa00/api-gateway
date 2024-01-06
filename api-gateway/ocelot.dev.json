@@ -167,7 +167,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-route-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
