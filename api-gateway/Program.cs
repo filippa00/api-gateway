@@ -18,7 +18,6 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 
 // Add services to the container.
 builder.Services.AddControllers();
-
 builder.Services.AddOcelot();
 builder.Services.DecorateClaimAuthoriser();
 
