@@ -173,7 +173,7 @@
       ],
       "UpstreamPathTemplate": "/api/Answers",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "answersapi"
+      "SwaggerKey": "mock-api-cardgame32-service.test.svc.cluster.local"
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer"
       //},
@@ -245,7 +245,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
