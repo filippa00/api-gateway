@@ -164,10 +164,10 @@
     //Answers
     {
       "DownstreamPathTemplate": "/Answers",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
+          "Host": "go-app-service.spiegelspel.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -183,10 +183,10 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
+          "Host": "go-app-service.spiegelspel.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -202,10 +202,10 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/game/{gameId}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
+          "Host": "go-app-service.spiegelspel.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -221,10 +221,10 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/question/{questionId}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
+          "Host": "go-app-service.spiegelspel.svc.cluster.local",
           "Port": 8092
         }
       ],
