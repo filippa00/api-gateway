@@ -173,20 +173,20 @@
       ],
       "UpstreamPathTemplate": "/api/Answers",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "mock-api-cardgame32-service.test.svc.cluster.local"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Answers/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -205,7 +205,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -224,7 +224,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -251,20 +251,20 @@
       ],
       "UpstreamPathTemplate": "/api/Cards",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "cardsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -283,7 +283,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -302,7 +302,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -324,7 +324,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -343,7 +343,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -365,26 +365,26 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
       "UpstreamPathTemplate": "/api/Themes",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "themesapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -406,7 +406,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
           "Port": 8092
         }
       ],
@@ -478,8 +478,5 @@
   "GlobalConfiguration": {
     "BaseUrl": "https://api-gateway-image-test.apps.ocp5-inholland.joran-bergfeld.com"
   }
-  //"GlobalConfiguration": {
-  //  "BaseUrl": "https://localhost:7140"
-  //}
 }
 
