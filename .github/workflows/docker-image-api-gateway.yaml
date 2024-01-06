@@ -24,6 +24,10 @@ jobs:
           #context: ./api-gateway-docker  # Path to the API Gateway Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-image:latest
+  
+      #- name: Trigger Jenkins Job
+      #  run: |
+      #    curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} "https://jenkins-spiegelspel.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-pipeline/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
 
   build_keycloak:
     runs-on: ubuntu-latest
