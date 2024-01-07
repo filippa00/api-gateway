@@ -173,13 +173,13 @@
       ],
       "UpstreamPathTemplate": "/api/Answers",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "answersapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "answersapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Answers/{id}",
@@ -192,13 +192,13 @@
       ],
       "UpstreamPathTemplate": "/api/Answers/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
-      "SwaggerKey": "answersapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "answersapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Answers/game/{gameId}",
@@ -211,13 +211,13 @@
       ],
       "UpstreamPathTemplate": "/api/Answers/game/{gameId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "answersapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "answersapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Answers/question/{questionId}",
