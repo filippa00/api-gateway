@@ -168,7 +168,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "go-app-service.spiegelspel.svc.cluster.local",
-          "Port": 8092
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Answers",
@@ -187,7 +187,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "go-app-service.spiegelspel.svc.cluster.local",
-          "Port": 8092
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Answers/{id}",
@@ -206,7 +206,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "go-app-service.spiegelspel.svc.cluster.local",
-          "Port": 8092
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Answers/game/{gameId}",
@@ -225,7 +225,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "go-app-service.spiegelspel.svc.cluster.local",
-          "Port": 8092
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Answers/question/{questionId}",
@@ -245,76 +245,76 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/Cards",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "cardsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "cardsapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/Cards/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
-      "SwaggerKey": "cardsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "cardsapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/Cards/cardsets/{cardSetId}",
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "cardsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Cards/themes/{themeId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/Cards/themes/{themeId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "cardsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "cardsapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
 
 
@@ -324,38 +324,38 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
           "Port": 8092
         }
       ],
       "UpstreamPathTemplate": "/api/CardSets",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "cardsetsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "cardsetsapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/CardSets/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/CardSets/{id}",
       "UpstreamHttpMethod": [ "PUT", "DELETE" ],
-      "SwaggerKey": "cardsetsapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "cardsetsapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
 
 
@@ -365,38 +365,38 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/Themes",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "themesapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "themesapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/Themes/{id}",
       "UpstreamHttpMethod": [ "PUT", "DELETE" ],
-      "SwaggerKey": "themesapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "SwaggerKey": "themesapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     },
 
 
