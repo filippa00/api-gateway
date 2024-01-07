@@ -242,7 +242,7 @@
     //Cards
     {
       "DownstreamPathTemplate": "/Cards",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
@@ -261,7 +261,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
@@ -280,7 +280,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
