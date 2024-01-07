@@ -289,7 +289,7 @@
       ],
       "UpstreamPathTemplate": "/api/Cards/cardsets/{cardSetId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "cardsapi",
+      "SwaggerKey": "cardsapi"
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer"
       //},
@@ -299,7 +299,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/themes/{themeId}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
