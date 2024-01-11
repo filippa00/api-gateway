@@ -10,17 +10,19 @@
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
+          
+
         }
       ],
-      "UpstreamPathTemplate": "/api/users",
+      "UpstreamPathTemplate": "/api/register",
       "UpstreamHttpMethod": [ "POST" ],
-      "Key": "register",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "Key": "register"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Login
@@ -68,13 +70,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/getUser",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Get UserById
@@ -89,16 +91,17 @@
         }
       ],
       "UpstreamPathTemplate": "/api/getUser/{id}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Map role to user
+    // user role id is 55cb4666-73e8-4a7f-9526-444609dbf1f3 in json
 
     {
       "DownstreamPathTemplate": "/admin/realms/master/users/{id}/role-mappings/realm",
@@ -110,13 +113,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/userRole/{id}",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "POST" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Update User
@@ -131,13 +134,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/updateUser/{id}",
-      "UpstreamHttpMethod": [ "PUT" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "PUT" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Delete User
@@ -152,13 +155,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/deleteUser/{id}",
-      "UpstreamHttpMethod": [ "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "DELETE" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Answers
@@ -167,6 +170,11 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
+          //live
+          //"Host": "go-app-service.spiegelspel.svc.cluster.local",
+          //"Port": 8080
+
+          //mock
           "Host": "go-app-service.spiegelspel.svc.cluster.local",
           "Port": 8080
         }
@@ -321,7 +329,7 @@
     //CardSets
     {
       "DownstreamPathTemplate": "/CardSets",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
@@ -340,7 +348,7 @@
     },
     {
       "DownstreamPathTemplate": "/CardSets/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
@@ -362,7 +370,7 @@
     //Themes
     {
       "DownstreamPathTemplate": "/Themes",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
@@ -381,7 +389,7 @@
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.spiegelspel.svc.cluster.local",
@@ -403,23 +411,43 @@
     // Game
     {
       "DownstreamPathTemplate": "/Game",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "mock-api-cardgame32-service.test.svc.cluster.local",
-          "Port": 8092
+          "Host": "game-microservice.spiegelspel.svc.cluster.local",
+          "Port": 5000
         }
       ],
       "UpstreamPathTemplate": "/api/Game",
-      "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ],
-      "SwaggerKey": "gameapi",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      }
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "gameapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
+    },
+    {
+      "DownstreamPathTemplate": "/Game/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-microservice.spiegelspel.svc.cluster.local",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Game/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "gameapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
     }
+
 
   ],
   "SwaggerEndPoints": [
