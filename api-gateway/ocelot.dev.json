@@ -9,7 +9,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/register",
@@ -31,7 +31,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/login",
@@ -47,7 +47,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/logout",
@@ -62,7 +62,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/getUser",
@@ -83,7 +83,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/getUser/{id}",
@@ -105,7 +105,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/userRole/{id}",
@@ -126,7 +126,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/updateUser/{id}",
@@ -147,7 +147,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 445
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/deleteUser/{id}",
