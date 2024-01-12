@@ -8,8 +8,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/register",
@@ -30,8 +30,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/login",
@@ -46,8 +46,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/logout",
@@ -61,8 +61,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/getUser",
@@ -82,8 +82,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/getUser/{id}",
@@ -101,11 +101,11 @@
 
     {
       "DownstreamPathTemplate": "/admin/realms/master/users/{id}/role-mappings/realm",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/userRole/{id}",
@@ -125,8 +125,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/updateUser/{id}",
@@ -146,8 +146,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak.keycloak.svc.cluster.local",
-          "Port": 8080
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
+          "Port": 445
         }
       ],
       "UpstreamPathTemplate": "/api/deleteUser/{id}",
@@ -163,7 +163,7 @@
     //Answers
     {
       "DownstreamPathTemplate": "/Answers",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
@@ -182,7 +182,7 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
@@ -201,7 +201,7 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/game/{gameId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
@@ -220,7 +220,7 @@
     },
     {
       "DownstreamPathTemplate": "/Answers/question/{questionId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
@@ -239,7 +239,7 @@
     },
     {
       "DownstreamPathTemplate": "/metrics",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
@@ -260,7 +260,7 @@
     //Cards
     {
       "DownstreamPathTemplate": "/Cards",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -279,7 +279,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -298,7 +298,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -317,7 +317,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/themes/{themeId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -339,7 +339,7 @@
     //CardSets
     {
       "DownstreamPathTemplate": "/CardSets",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -358,7 +358,7 @@
     },
     {
       "DownstreamPathTemplate": "/CardSets/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -380,7 +380,7 @@
     //Themes
     {
       "DownstreamPathTemplate": "/Themes",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -399,7 +399,7 @@
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -418,7 +418,7 @@
     },
     {
       "DownstreamPathTemplate": "/metrics",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -440,7 +440,7 @@
     // Game
     {
       "DownstreamPathTemplate": "/Game",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "game-microservice.mg-api-group.svc.cluster.local",
@@ -459,7 +459,7 @@
     },
     {
       "DownstreamPathTemplate": "/Game/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "game-microservice.mg-api-group.svc.cluster.local",
@@ -478,7 +478,7 @@
     },
     {
       "DownstreamPathTemplate": "/metrics",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "game-microservice.mg-api-group.svc.cluster.local",
@@ -549,9 +549,9 @@
         }
       ]
     }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "https://api-gateway-image-test.apps.ocp5-inholland.joran-bergfeld.com"
-  }
+  ]
+  //"GlobalConfiguration": {
+  //  "BaseUrl": "https://api-gateway-image-test.apps.ocp5-inholland.joran-bergfeld.com"
+  //}
 }
 
