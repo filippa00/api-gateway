@@ -27,6 +27,7 @@ using Microsoft.Identity.Client;
 using Ocelot.DependencyInjection;
 using Ocelot.Requester;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Routing;
 
 namespace api_gateway_tests
 {
@@ -138,6 +139,53 @@ namespace api_gateway_tests
 
         }
 
-       
+        [Test]
+        public async Task TestRegisterRouteAuthorization()
+        {
+            // Arrange
+            //var yourRoute = new YourRoute(); // Replace with the actual class name
+            var httpContext = new DefaultHttpContext();
+            httpContext.Request.Method = HttpMethods.Post;
+            httpContext.Request.Path = "/api/register";
+
+            var authenticationServiceMock = new Mock<IAuthenticationService>();
+            authenticationServiceMock
+                .Setup(x => x.AuthenticateAsync(It.IsAny<HttpContext>(), It.IsAny<string>()))
+                .ReturnsAsync(AuthenticateResult.Success(new AuthenticationTicket(
+                    new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
+                    {
+                    new Claim(ClaimTypes.Role, "superadmin")
+                    }, "Bearer")),
+                    "Bearer")));
+
+            var routeData = new RouteData();
+            routeData.Values["controller"] = "YourController"; // Replace with the actual controller name
+            httpContext.Request.RouteValues = routeData.Values;
+
+            // Act
+            //await yourRoute.AuthenticateAndAuthorizeAsync(httpContext, authenticationServiceMock.Object);
+
+            // Assert
+            // Add assertions for your authorization logic and ensure all code paths are covered
+            Assert.IsTrue(httpContext.User.Identity.IsAuthenticated);
+            Assert.IsTrue(httpContext.User.IsInRole("superadmin"));
+        }
+
+        [Test]
+        public void TestYourRouteConfiguration()
+        {
+            // Arrange
+            //var yourRouteConfig = new YourRouteConfig(); // Replace with the actual class name
+            var routeBuilder = new Mock<IRouteBuilder>();
+
+            // Act
+          //  yourRouteConfig.Configure(routeBuilder.Object);
+
+            // Assert
+            // Add assertions for your route configuration logic and ensure all code paths are covered
+           // routeBuilder.Verify(x => x.MapRoute(It.IsAny<string>(), It.IsAny<Action<IEndpointRouteBuilder>>()));
+        }
+
+
     }
 }

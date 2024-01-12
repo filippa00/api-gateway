@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication;
 using Extentions;
-
+using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args)
     ;
@@ -101,7 +101,7 @@ app.UseSwaggerForOcelotUI(opt =>
 });
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseMetricServer();
 app.UseOcelot().Wait();
 app.Run();
 

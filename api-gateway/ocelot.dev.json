@@ -8,10 +8,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
-          
-
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/register",
@@ -32,16 +30,14 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/login",
       "UpstreamHttpMethod": [ "POST" ],
       "Key": "login"
     },
-
-
 
     //Logout
 
@@ -50,8 +46,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/logout",
@@ -65,8 +61,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/getUser",
@@ -86,8 +82,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/getUser/{id}",
@@ -108,8 +104,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/userRole/{id}",
@@ -129,8 +125,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/updateUser/{id}",
@@ -150,8 +146,8 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
-          "Port": 443
+          "Host": "keycloak.keycloak.svc.cluster.local",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/deleteUser/{id}",
@@ -170,7 +166,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "go-app-service.spiegelspel.svc.cluster.local",
+          "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
           "Port": 8080
         }
       ],
@@ -189,7 +185,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "go-app-service.spiegelspel.svc.cluster.local",
+          "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
           "Port": 8080
         }
       ],
@@ -208,7 +204,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "go-app-service.spiegelspel.svc.cluster.local",
+          "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
           "Port": 8080
         }
       ],
@@ -227,7 +223,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "go-app-service.spiegelspel.svc.cluster.local",
+          "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
           "Port": 8080
         }
       ],
@@ -241,6 +237,25 @@
       //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
       //}
     },
+    {
+      "DownstreamPathTemplate": "/metrics",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "answers-microservice-service.mg-api-group.svc.cluster.local",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Answers/metrics",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "answersapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
+    },
 
     //Cards
     {
@@ -248,7 +263,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -267,7 +282,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -286,7 +301,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -305,7 +320,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -327,7 +342,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -346,7 +361,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -368,7 +383,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -387,7 +402,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "cards-microservice.spiegelspel.svc.cluster.local",
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
           "Port": 80
         }
       ],
@@ -401,6 +416,25 @@
       //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
       //}
     },
+    {
+      "DownstreamPathTemplate": "/metrics",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Themes/metrics",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "themesapi"
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "suoeradmin"
+      //}
+    },
 
 
     // Game
@@ -409,7 +443,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "game-microservice.spiegelspel.svc.cluster.local",
+          "Host": "game-microservice.mg-api-group.svc.cluster.local",
           "Port": 5000
         }
       ],
@@ -428,7 +462,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "game-microservice.spiegelspel.svc.cluster.local",
+          "Host": "game-microservice.mg-api-group.svc.cluster.local",
           "Port": 5000
         }
       ],
@@ -440,6 +474,24 @@
       //},
       //"RouteClaimsRequirement": {
       //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //}
+    },
+    {
+      "DownstreamPathTemplate": "/metrics",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-microservice.mg-api-group.svc.cluster.local",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Game/metrics",
+      "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
       //}
     }
 
