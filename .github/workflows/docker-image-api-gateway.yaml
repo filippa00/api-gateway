@@ -27,8 +27,7 @@ jobs:
   
       - name: Trigger Jenkins Job
         run: |
-          curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} \ 
-          "https://jenkins-mg-infra-group.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
+          curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} "https://jenkins-mg-infra-group.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
  
   # Just running a test to see if it changes the image im openshift. 
   # build_keycloak:
