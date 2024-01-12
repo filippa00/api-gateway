@@ -260,7 +260,7 @@
     //Cards
     {
       "DownstreamPathTemplate": "/Cards",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
