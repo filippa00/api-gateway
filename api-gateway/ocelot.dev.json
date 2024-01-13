@@ -57,7 +57,7 @@
     //Get UserByEmail
     //email = ..... in query
     {
-      "DownstreamPathTemplate": "/admin/spiegelspel/master/users",
+      "DownstreamPathTemplate": "/admin/realms/spiegelspel/users",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -162,7 +162,7 @@
 
     //Answers
     {
-      "DownstreamPathTemplate": "/Answers",
+      "DownstreamPathTemplate": "/answers",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -170,7 +170,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/api/Answers",
+      "UpstreamPathTemplate": "/api/answers",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "SwaggerKey": "answersapi"
       //"AuthenticationOptions": {
@@ -181,7 +181,7 @@
       //}
     },
     {
-      "DownstreamPathTemplate": "/Answers/{id}",
+      "DownstreamPathTemplate": "/answers/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -189,7 +189,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/api/Answers/{id}",
+      "UpstreamPathTemplate": "/api/answers/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
       "SwaggerKey": "answersapi"
       //"AuthenticationOptions": {
@@ -200,7 +200,7 @@
       //}
     },
     {
-      "DownstreamPathTemplate": "/Answers/game/{gameId}",
+      "DownstreamPathTemplate": "/answers/game/{gameId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -208,7 +208,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/api/Answers/game/{gameId}",
+      "UpstreamPathTemplate": "/api/answers/game/{gameId}",
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "answersapi"
       //"AuthenticationOptions": {
@@ -219,7 +219,7 @@
       //}
     },
     {
-      "DownstreamPathTemplate": "/Answers/question/{questionId}",
+      "DownstreamPathTemplate": "/answers/question/{questionId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -227,7 +227,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/api/Answers/question/{questionId}",
+      "UpstreamPathTemplate": "/api/answers/question/{questionId}",
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "answersapi"
       //"AuthenticationOptions": {
@@ -246,7 +246,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/api/Answers/metrics",
+      "UpstreamPathTemplate": "/api/answers/metrics",
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "answersapi"
       //"AuthenticationOptions": {
@@ -439,7 +439,7 @@
 
     // Game
     {
-      "DownstreamPathTemplate": "/Game",
+      "DownstreamPathTemplate": "/game",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -447,7 +447,7 @@
           "Port": 5000
         }
       ],
-      "UpstreamPathTemplate": "/api/Game",
+      "UpstreamPathTemplate": "/api/game",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "SwaggerKey": "gameapi"
       //"AuthenticationOptions": {
@@ -458,7 +458,7 @@
       //}
     },
     {
-      "DownstreamPathTemplate": "/Game/{id}",
+      "DownstreamPathTemplate": "/game/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -466,7 +466,7 @@
           "Port": 5000
         }
       ],
-      "UpstreamPathTemplate": "/api/Game/{id}",
+      "UpstreamPathTemplate": "/api/game/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "SwaggerKey": "gameapi"
       //"AuthenticationOptions": {
@@ -485,7 +485,7 @@
           "Port": 5000
         }
       ],
-      "UpstreamPathTemplate": "/api/Game/metrics",
+      "UpstreamPathTemplate": "/api/game/metrics",
       "UpstreamHttpMethod": [ "GET" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer"
