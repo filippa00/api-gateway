@@ -4,7 +4,7 @@
     //Users
     //Registration super admin token required
     {
-      "DownstreamPathTemplate": "/admin/realms/master/users",
+      "DownstreamPathTemplate": "/admin/realms/spiegelspel/users",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -26,7 +26,7 @@
     //Login
 
     {
-      "DownstreamPathTemplate": "/realms/master/protocol/openid-connect/token",
+      "DownstreamPathTemplate": "/realms/spiegelspel/protocol/openid-connect/token",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -42,7 +42,7 @@
     //Logout
 
     {
-      "DownstreamPathTemplate": "/realms/master/protocol/openid-connect/logout",
+      "DownstreamPathTemplate": "/realms/spiegelspel/protocol/openid-connect/logout",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -55,9 +55,9 @@
     },
 
     //Get UserByEmail
-    //email = ..... in query 
+    //email = ..... in query
     {
-      "DownstreamPathTemplate": "/admin/realms/master/users",
+      "DownstreamPathTemplate": "/admin/spiegelspel/master/users",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -78,7 +78,7 @@
     //Get UserById
 
     {
-      "DownstreamPathTemplate": "/admin/realms/master/users/{id}",
+      "DownstreamPathTemplate": "/admin/realms/spiegelspel/users/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -100,7 +100,7 @@
     // user role id is 55cb4666-73e8-4a7f-9526-444609dbf1f3 in json
 
     {
-      "DownstreamPathTemplate": "/admin/realms/master/users/{id}/role-mappings/realm",
+      "DownstreamPathTemplate": "/admin/realms/spiegelspel/users/{id}/role-mappings/realm",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -121,7 +121,7 @@
     //Update User
 
     {
-      "DownstreamPathTemplate": "/admin/realms/master/users/{id}",
+      "DownstreamPathTemplate": "/admin/realms/spiegelspel/users/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -142,7 +142,7 @@
     //Delete User
 
     {
-      "DownstreamPathTemplate": "/admin/realms/master/users/{id}",
+      "DownstreamPathTemplate": "/admin/realms/spiegelspel/users/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -260,7 +260,7 @@
     //Cards
     {
       "DownstreamPathTemplate": "/Cards",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -279,7 +279,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
@@ -298,7 +298,7 @@
     },
     {
       "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
