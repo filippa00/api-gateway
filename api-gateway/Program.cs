@@ -8,33 +8,37 @@ using Microsoft.AspNetCore.Authentication;
 using Extentions;
 using Prometheus;
 
-var builder = WebApplication.CreateBuilder(args)
-    ;
-builder.WebHost.ConfigureKestrel(serverOptions =>
+public class Program
 {
-    serverOptions.ListenAnyIP(8080); // Listen for HTTP on port 8080
-});
-
-// Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddOcelot();
-builder.Services.DecorateClaimAuthoriser();
-
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gateway v1.0", Version = "v1" });
-    c.AddSecurityDefinition("OAuth2", new OpenApiSecurityScheme
+    private static void Main(string[] args)
     {
-        Type = SecuritySchemeType.OAuth2,
-        Flows = new OpenApiOAuthFlows
+        var builder = WebApplication.CreateBuilder(args)
+    ;
+        builder.WebHost.ConfigureKestrel(serverOptions =>
         {
-            Implicit = new OpenApiOAuthFlow
+            serverOptions.ListenAnyIP(8080); // Listen for HTTP on port 8080
+        });
+
+        // Add services to the container.
+        builder.Services.AddControllers();
+        builder.Services.AddOcelot();
+        builder.Services.DecorateClaimAuthoriser();
+
+        builder.Services.AddSwaggerGen(c =>
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gateway v1.0", Version = "v1" });
+            c.AddSecurityDefinition("OAuth2", new OpenApiSecurityScheme
             {
-                AuthorizationUrl = new Uri(builder.Configuration.GetValue<string>("Configuration:AuthorizationUrl")),
-            }
-        }
-    });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+                Type = SecuritySchemeType.OAuth2,
+                Flows = new OpenApiOAuthFlows
+                {
+                    Implicit = new OpenApiOAuthFlow
+                    {
+                        AuthorizationUrl = new Uri(builder.Configuration.GetValue<string>("Configuration:AuthorizationUrl")),
+                    }
+                }
+            });
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement{
     {
         new OpenApiSecurityScheme{
             Reference = new OpenApiReference{
@@ -45,62 +49,63 @@ builder.Services.AddSwaggerGen(c =>
         new string[] {}
     }
 
-});
-});
-builder.Services.AddSwaggerForOcelot(builder.Configuration);
-builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"ocelot.dev.json"));
-builder.Logging.AddConsole();
-builder.Services
-    .AddAuthentication(options => 
-    {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(x =>
-    {
-        x.SaveToken = true;
-        x.MetadataAddress = builder.Configuration.GetValue<string>("Configuration:MetadataAddress");
+        });
+        });
+        builder.Services.AddSwaggerForOcelot(builder.Configuration);
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"ocelot.prod.json"));
+        builder.Logging.AddConsole();
+        builder.Services
+            .AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.SaveToken = true;
+                x.MetadataAddress = builder.Configuration.GetValue<string>("Configuration:MetadataAddress");
 
-        x.TokenValidationParameters = new TokenValidationParameters
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = true,
+                    ValidAudience = "account",
+                };
+
+                x.RequireHttpsMetadata = false;
+            });
+
+        builder.Services.AddAuthorization(o =>
         {
-            ValidateIssuer = false,
-            ValidateAudience = true,
-            ValidAudience = "account",
-        };
-
-        x.RequireHttpsMetadata = false;
-    });
-
-builder.Services.AddAuthorization(o =>
-{
-    o.DefaultPolicy = new AuthorizationPolicyBuilder()
-    .RequireAuthenticatedUser()
-    .Build();
-});
-builder.Services.AddScoped<IClaimsTransformation, CustomClaimsTransformer>();
-var app = builder.Build();
-app.UseHttpsRedirection();
+            o.DefaultPolicy = new AuthorizationPolicyBuilder()
+            .RequireAuthenticatedUser()
+            .Build();
+        });
+        builder.Services.AddScoped<IClaimsTransformation, CustomClaimsTransformer>();
+        var app = builder.Build();
+        app.UseHttpsRedirection();
 
 
-app.UsePathBase("/gateway");
+        app.UsePathBase("/gateway");
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+
+
+
+        app.MapControllers();
+        app.UseSwaggerForOcelotUI(opt =>
+        {
+            opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
+            opt.PathToSwaggerGenerator = "/swagger/docs";
+        });
+        app.UseAuthentication();
+        app.UseAuthorization();
+        app.UseMetricServer();
+        app.UseOcelot().Wait();
+        app.Run();
+    }
 }
-
-
-
-app.MapControllers();
-app.UseSwaggerForOcelotUI(opt =>
-{
-    opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
-    opt.PathToSwaggerGenerator = "/swagger/docs";
-});
-app.UseAuthentication();
-app.UseAuthorization();
-app.UseMetricServer();
-app.UseOcelot().Wait();
-app.Run();
-

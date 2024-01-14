@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Extentions\Extentions.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="api_gateway_tests"/>
+	</ItemGroup>
+
 </Project>

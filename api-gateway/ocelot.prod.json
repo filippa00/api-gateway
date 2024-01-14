@@ -13,12 +13,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/register",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "Key": "register"
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer"
       //},
       //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
       //}
     },
 
@@ -45,7 +46,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -60,18 +61,18 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/getUser",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Get UserById
@@ -81,18 +82,18 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/getUser/{id}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Map role to user
@@ -103,18 +104,18 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/userRole/{id}",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "POST" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Update User
@@ -124,18 +125,18 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/updateUser/{id}",
-      "UpstreamHttpMethod": [ "PUT" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "PUT" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Delete User
@@ -145,18 +146,18 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/deleteUser/{id}",
-      "UpstreamHttpMethod": [ "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      }
+      "UpstreamHttpMethod": [ "DELETE" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer"
+      //},
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      //}
     },
 
     //Answers
