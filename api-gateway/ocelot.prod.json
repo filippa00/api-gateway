@@ -172,13 +172,13 @@
       ],
       "UpstreamPathTemplate": "/api/answers",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "answersapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/answers/{id}",
@@ -449,13 +449,13 @@
       ],
       "UpstreamPathTemplate": "/api/game",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "gameapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "gameapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/game/{id}",
