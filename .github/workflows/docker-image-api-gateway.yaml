@@ -1,50 +1,55 @@
 name: Docker images for API Gateway and Keycloak
-
 on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
-  build_api_gateway:
+  deploy_api_gateway_for_dev:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/dev
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+  
       - name: Login to Docker Hub for API Gateway
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+          
       - name: Build and push API Gateway image
         uses: docker/build-push-action@v5
         with:
           #context: ./api-gateway-docker  # Path to the API Gateway Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-image:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-dev:latest
   
-      - name: Trigger Jenkins Job
-        run: |
-          curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} "https://jenkins-mg-infra-group.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
- 
-  # Just running a test to see if it changes the image im openshift. 
-  # build_keycloak:
+      # - name: Trigger Jenkins Job
+      #   run: |
+      #     curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} "https://jenkins-mg-infra-group.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
+
+  # deploy_api_gateway_for_prod:
   #   runs-on: ubuntu-latest
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v4
 
-  #     - name: Login to Docker Hub for Keycloak
+  #     - name: Login to Docker Hub for API Gateway dev
   #       uses: docker/login-action@v3
   #       with:
   #         username: ${{ secrets.DOCKER_USERNAME }}
   #         password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  #     - name: Build and push Keycloak image
+          
+  #     - name: Build and push API Gateway dev image
   #       uses: docker/build-push-action@v5
   #       with:
-  #         context: ./keycloak  # Path to the Keycloak Dockerfile
+  #         #context: ./api-gateway-docker  # Path to the API Gateway Dockerfile
   #         push: true
-  #         tags: ${{ secrets.DOCKER_USERNAME }}/keycloak-image:latest
+  #         tags: ${{ secrets.DOCKER_USERNAME }}/api-gateway-image:latest
+  
+  #     - name: Trigger Jenkins Job
+  #       run: |
+  #         curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} "https://jenkins-mg-infra-group.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
