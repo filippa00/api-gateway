@@ -14,13 +14,13 @@
       ],
       "UpstreamPathTemplate": "/api/register",
       "UpstreamHttpMethod": [ "POST" ],
-      "Key": "register"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "Key": "register",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Login
@@ -66,13 +66,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/getUser",
-      "UpstreamHttpMethod": [ "GET" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Get UserById
@@ -87,13 +87,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/getUser/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Map role to user
@@ -109,13 +109,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/userRole/{id}",
-      "UpstreamHttpMethod": [ "POST" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Update User
@@ -130,13 +130,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/updateUser/{id}",
-      "UpstreamHttpMethod": [ "PUT" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Delete User
@@ -151,13 +151,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/deleteUser/{id}",
-      "UpstreamHttpMethod": [ "DELETE" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Answers
@@ -191,13 +191,13 @@
       ],
       "UpstreamPathTemplate": "/api/answers/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
-      "SwaggerKey": "answersapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/answers/game/{gameId}",
@@ -210,13 +210,13 @@
       ],
       "UpstreamPathTemplate": "/api/answers/game/{gameId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "answersapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/answers/question/{questionId}",
@@ -229,13 +229,13 @@
       ],
       "UpstreamPathTemplate": "/api/answers/question/{questionId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "answersapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/metrics",
@@ -248,13 +248,13 @@
       ],
       "UpstreamPathTemplate": "/api/answers/metrics",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "answersapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "SwaggerKey": "answersapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     },
 
     //Cards
@@ -264,18 +264,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Cards",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "cardsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Cards/{id}",
@@ -283,18 +283,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Cards/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
-      "SwaggerKey": "cardsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Cards/cardsets/{cardSetId}",
@@ -302,18 +302,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Cards/cardsets/{cardSetId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "cardsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Cards/themes/{themeId}",
@@ -321,18 +321,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Cards/themes/{themeId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "cardsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
 
 
@@ -343,18 +343,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/CardSets",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "cardsetsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsetsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/CardSets/{id}",
@@ -362,18 +362,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/CardSets/{id}",
       "UpstreamHttpMethod": [ "PUT", "DELETE" ],
-      "SwaggerKey": "cardsetsapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "cardsetsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
 
 
@@ -384,18 +384,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Themes",
       "UpstreamHttpMethod": [ "POST", "GET" ],
-      "SwaggerKey": "themesapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/Themes/{id}",
@@ -403,18 +403,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Themes/{id}",
       "UpstreamHttpMethod": [ "PUT", "DELETE" ],
-      "SwaggerKey": "themesapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/metrics",
@@ -422,18 +422,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "cards-microservice.mg-api-group.svc.cluster.local",
-          "Port": 80
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/Themes/metrics",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "themesapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "suoeradmin"
-      //}
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "suoeradmin"
+      }
     },
 
 
@@ -468,13 +468,13 @@
       ],
       "UpstreamPathTemplate": "/api/game/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
-      "SwaggerKey": "gameapi"
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-      //}
+      "SwaggerKey": "gameapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
     },
     {
       "DownstreamPathTemplate": "/metrics",
@@ -486,13 +486,13 @@
         }
       ],
       "UpstreamPathTemplate": "/api/game/metrics",
-      "UpstreamHttpMethod": [ "GET" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer"
-      //},
-      //"RouteClaimsRequirement": {
-      //  "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-      //}
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
     }
 
 
