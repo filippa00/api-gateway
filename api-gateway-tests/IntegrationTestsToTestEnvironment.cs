@@ -95,6 +95,7 @@ namespace api_gateway_tests
             var response = await _httpClient.PostAsync(url, new StringContent(userDataJson, Encoding.UTF8, "application/json"));
 
 
+
             //Assert
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
         }
