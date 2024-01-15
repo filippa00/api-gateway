@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32.SafeHandles;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Models
 {
@@ -10,6 +9,8 @@ namespace Models
 
         [JsonProperty("refresh_token")]
         public string RefreshToken { get; set; }
+
+        public string AdminId => "3747c27b-871a-482d-99c8-d7f3882bea33";
 
     }
 }

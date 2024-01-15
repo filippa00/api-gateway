@@ -101,7 +101,7 @@
 
     {
       "DownstreamPathTemplate": "/admin/realms/spiegelspel/users/{id}/role-mappings/realm",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com",
