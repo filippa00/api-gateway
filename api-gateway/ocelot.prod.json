@@ -515,7 +515,6 @@
       "Config": [
         {
           "Name": "Cards Microservice",
-          "Version": "v1",
           "Url": "http://cards-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
@@ -525,7 +524,6 @@
       "Config": [
         {
           "Name": "CardsSets Microservice",
-          "Version": "v1",
           "Url": "http://cards-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
@@ -535,7 +533,6 @@
       "Config": [
         {
           "Name": "Themes Microservice",
-          "Version": "v1",
           "Url": "http://cards-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
@@ -545,8 +542,7 @@
       "Config": [
         {
           "Name": "Game Microservice",
-          "Version": "v1",
-          "Url": "http://game-microservice.mg-api-group.svc.cluster.local/swagger.json"
+          "Url": "http://game-microservice-mg-api-group.apps.ocp5-inholland.joran-bergfeld.com/swagger.json"
         }
       ]
     }
