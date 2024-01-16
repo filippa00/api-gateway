@@ -487,6 +487,7 @@
       ],
       "UpstreamPathTemplate": "/api/game/metrics",
       "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "gameapi",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       },
@@ -504,7 +505,7 @@
         {
           "Name": "Answers Microservice",
           "Version": "v1",
-          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+          "Url": "http://answers-microservice-service.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
     },
@@ -515,7 +516,7 @@
         {
           "Name": "Cards Microservice",
           "Version": "v1",
-          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
     },
@@ -525,7 +526,7 @@
         {
           "Name": "CardsSets Microservice",
           "Version": "v1",
-          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
     },
@@ -535,7 +536,7 @@
         {
           "Name": "Themes Microservice",
           "Version": "v1",
-          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
     },
@@ -545,7 +546,7 @@
         {
           "Name": "Game Microservice",
           "Version": "v1",
-          "Url": "https://localhost:8092/swagger/v1/swagger.json"
+          "Url": "http://game-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
     }
