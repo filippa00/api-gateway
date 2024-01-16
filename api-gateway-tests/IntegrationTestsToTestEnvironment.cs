@@ -1,9 +1,5 @@
 ﻿using api_gateway_tests.setting;
 using AutoFixture;
-using Flurl;
-using Keycloak.AuthServices.Sdk.Admin.Models;
-using Keycloak.Net.Models.Clients;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Models;
 using Newtonsoft.Json;
@@ -26,7 +22,6 @@ namespace api_gateway_tests
         private const string _clientId = "spiegelspel";
         private const string _adminPassword = "jHwS2GNeO1k7OJ4wYx1M";
         private LoginToken _adminToken;
-        private Fixture _fixture;
 
         private readonly KeycloakUser _user = new KeycloakUser()
         {
@@ -48,7 +43,6 @@ namespace api_gateway_tests
             _factory = new CustomWebApplicationFactory<Program>();
             _testEnvironmentUrl = "http://localhost:80";
             _httpClient = _factory.CreateClient(new WebApplicationFactoryClientOptions());
-            _fixture = new Fixture();
         }
 
         private LoginToken GetAdminToken()
