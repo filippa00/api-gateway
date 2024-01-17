@@ -515,7 +515,7 @@
       "Config": [
         {
           "Name": "Cards Microservice",
-          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger/v1/swagger.json"
         }
       ]
     },
@@ -524,7 +524,7 @@
       "Config": [
         {
           "Name": "CardsSets Microservice",
-          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger/v1/swagger.json"
         }
       ]
     },
@@ -533,7 +533,7 @@
       "Config": [
         {
           "Name": "Themes Microservice",
-          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger/v1/swagger.json"
         }
       ]
     },
