@@ -542,7 +542,7 @@
       "Config": [
         {
           "Name": "Game Microservice",
-          "Url": "http://game-microservice-mg-api-group.apps.ocp5-inholland.joran-bergfeld.com/swagger.json"
+          "Url": "http://game-microservice.mg-api-group.svc.cluster.local/swagger.json"
         }
       ]
     }
