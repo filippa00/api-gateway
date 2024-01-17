@@ -505,7 +505,7 @@
         {
           "Name": "Answers Microservice",
           "Version": "v1",
-          "Url": "http://answers-microservice-mg-api-group.apps.ocp5-inholland.joran-bergfeld.com/swagger.json"
+          "Url": "http://answers-microservice-service.mg-api-group.svc.cluster.local:8080/swagger.json"
         }
       ]
     },
@@ -515,7 +515,7 @@
       "Config": [
         {
           "Name": "Cards Microservice",
-          "Url": "http://cards-microservice-mg-api-group.apps.ocp5-inholland.joran-bergfeld.com/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger.json"
         }
       ]
     },
@@ -524,7 +524,7 @@
       "Config": [
         {
           "Name": "CardsSets Microservice",
-          "Url": "http://cards-microservice-mg-api-group.apps.ocp5-inholland.joran-bergfeld.com/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger.json"
         }
       ]
     },
@@ -533,7 +533,7 @@
       "Config": [
         {
           "Name": "Themes Microservice",
-          "Url": "http://cards-microservice-mg-api-group.apps.ocp5-inholland.joran-bergfeld.com/swagger.json"
+          "Url": "http://cards-microservice.mg-api-group.svc.cluster.local:8080/swagger.json"
         }
       ]
     },
