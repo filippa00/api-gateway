@@ -35,4 +35,4 @@ jobs:
   
       - name: Trigger Jenkins Job
         run: |
-          curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT}} "https://jenkins-mg-development.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
+          curl -X POST -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PAT_DEV}} "https://jenkins-mg-development.apps.ocp5-inholland.joran-bergfeld.com/job/api-gateway-job/build?token=${{ secrets.JENKINS_REMOTE_TRIGGER_TOKEN }}"
