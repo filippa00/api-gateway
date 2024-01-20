@@ -366,7 +366,26 @@
         }
       ],
       "UpstreamPathTemplate": "/api/CardSets/{id}",
-      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "cardsetsapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/CardSets/{id}/logo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/CardSets/{id}/logo",
+      "UpstreamHttpMethod": [ "PUT" ],
       "SwaggerKey": "cardsetsapi",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
@@ -407,7 +426,26 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Themes/{id}",
-      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "themesapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/Themes/{id}/image",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cards-microservice.mg-api-group.svc.cluster.local",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Themes/{id}/image",
+      "UpstreamHttpMethod": [  "PUT" ],
       "SwaggerKey": "themesapi",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"

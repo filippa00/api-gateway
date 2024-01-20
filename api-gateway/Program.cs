@@ -39,7 +39,7 @@ public class Program
                 }
             });
             c.AddSecurityRequirement(new OpenApiSecurityRequirement{
-    {
+        {
         new OpenApiSecurityScheme{
             Reference = new OpenApiReference{
                 Type = ReferenceType.SecurityScheme,
@@ -47,7 +47,7 @@ public class Program
             }
         },
         new string[] {}
-    }
+            }
 
         });
         });

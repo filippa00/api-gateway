@@ -13,7 +13,7 @@ using System.Text;
 
 namespace api_gateway_tests
 {
-    public class IntegrationTestsToTestEnvironment : IDisposable
+    public class AuthenticationTests : IDisposable
     {
         private HttpClient _httpClient;
         private string _testEnvironmentUrl;
@@ -38,14 +38,14 @@ namespace api_gateway_tests
             Email = "updatedemail@example.com",
         };
 
-        public IntegrationTestsToTestEnvironment()
+        public AuthenticationTests()
         {
             _factory = new CustomWebApplicationFactory<Program>();
             _testEnvironmentUrl = "http://localhost:80";
             _httpClient = _factory.CreateClient(new WebApplicationFactoryClientOptions());
         }
 
-        private LoginToken GetAdminToken()
+        public LoginToken GetAdminToken()
         {
             string endpoint = "/api/login";
             var formData = new Dictionary<string, string>
@@ -104,7 +104,6 @@ namespace api_gateway_tests
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _adminToken.AccessToken);
 
-            //Act
             var response = await _httpClient.GetAsync(_testEnvironmentUrl + endpoint + $"?email={_user.Email}");
             string responseContent = response.Content.ReadAsStringAsync().Result;
            List<KeycloakUser> user = JsonConvert.DeserializeObject<List<KeycloakUser>>(responseContent);
