@@ -8,7 +8,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -29,7 +29,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -45,7 +45,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -60,7 +60,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -81,7 +81,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -103,7 +103,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -124,7 +124,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],
@@ -145,7 +145,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com",
+          "Host": "keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com",
           "Port": 443
         }
       ],

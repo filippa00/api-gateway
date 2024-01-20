@@ -18,9 +18,10 @@ namespace api_gateway_tests
         private HttpClient _httpClient;
         private string _testEnvironmentUrl;
         private CustomWebApplicationFactory<Program> _factory;
-        private const string _clientSecret = "0Cq5KAWWtg9e97O5EnQLMEuegBT3OPLj";
+        private const string _clientSecret = "Sqtplt6kSwTqtXubulAQv7dEuj7Byoyi";
         private const string _clientId = "spiegelspel";
-        private const string _adminPassword = "jHwS2GNeO1k7OJ4wYx1M";
+        private const string _adminPassword = "passworddev";
+        private const string _userRoleId = "b9db4fcb-9931-41c0-b2a1-472f1ce01dff";
         private LoginToken _adminToken;
 
         private readonly KeycloakUser _user = new KeycloakUser()
@@ -220,11 +221,11 @@ namespace api_gateway_tests
 
             string endpoint = "/api/userRole/";
 
-            string jsonData = @"[
-            {
-                ""id"": ""819933f8-6dd8-4afb-b9ba-177e5d0d6ec3"",
+            string jsonData = $@"[
+            {{
+                ""id"": ""{_userRoleId}"",
                 ""name"": ""user""
-            }
+            }}
          ]";
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _adminToken.AccessToken);

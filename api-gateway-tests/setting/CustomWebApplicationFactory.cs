@@ -31,7 +31,7 @@ namespace api_gateway_tests.setting
                     })
                     .AddJwtBearer(x =>
                     {
-                        x.MetadataAddress = "https://keycloak-api-gateway-test.apps.ocp5-inholland.joran-bergfeld.com/realms/spiegelspel/.well-known/openid-configuration";
+                        x.MetadataAddress = "https://keycloak-mg-development.apps.ocp5-inholland.joran-bergfeld.com/realms/spiegelspel/.well-known/openid-configuration";
                         x.SaveToken = true;
 
                         x.TokenValidationParameters = new TokenValidationParameters
