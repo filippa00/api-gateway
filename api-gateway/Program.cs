@@ -19,6 +19,7 @@ public class Program
             serverOptions.ListenAnyIP(8080); // Listen for HTTP on port 8080
         });
 
+
         // Add services to the container.
         builder.Services.AddControllers();
         builder.Services.AddOcelot();
@@ -34,12 +35,12 @@ public class Program
                 {
                     Implicit = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri(builder.Configuration.GetValue<string>("Configuration:AuthorizationUrl")),
+                        AuthorizationUrl = new Uri($"{Environment.GetEnvironmentVariable("AuthorizationUrl")}"),
                     }
                 }
             });
             c.AddSecurityRequirement(new OpenApiSecurityRequirement{
-    {
+        {
         new OpenApiSecurityScheme{
             Reference = new OpenApiReference{
                 Type = ReferenceType.SecurityScheme,
@@ -47,12 +48,12 @@ public class Program
             }
         },
         new string[] {}
-    }
+            }
 
         });
         });
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"ocelot.prod.json"));
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
@@ -63,7 +64,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                x.MetadataAddress = builder.Configuration.GetValue<string>("Configuration:MetadataAddress");
+                x.MetadataAddress = $"{Environment.GetEnvironmentVariable("MetadataAddress")}";
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
