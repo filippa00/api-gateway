@@ -35,7 +35,7 @@ public class Program
                 {
                     Implicit = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri($"{Environment.GetEnvironmentVariable("AUTHORIZATION_URL")}"),
+                        AuthorizationUrl = new Uri($"{Environment.GetEnvironmentVariable("AuthorizationUrl")}"),
                     }
                 }
             });
@@ -64,7 +64,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                x.MetadataAddress = $"{Environment.GetEnvironmentVariable("METADATA_ADDRESS")}";
+                x.MetadataAddress = $"{Environment.GetEnvironmentVariable("MetadataAddress")}";
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
