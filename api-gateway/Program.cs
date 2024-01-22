@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication;
 using Extentions;
 using Prometheus;
-using k8s;
 
 public class Program
 {
@@ -54,7 +53,7 @@ public class Program
         });
         });
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION")));
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION").ToString()));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
