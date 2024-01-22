@@ -543,7 +543,7 @@
         {
           "Name": "Answers Microservice",
           "Version": "v1",
-          "Url": "http://answers-microservice-service.mg-api-group.svc.cluster.local:8080/swagger.json"
+          "Url": "http://answers-microservice-service.mg-api-group.svc.cluster.local:8080/swagger/doc.json"
         }
       ]
     },

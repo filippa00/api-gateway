@@ -34,7 +34,7 @@ public class Program
                 {
                     Implicit = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri(builder.Configuration.GetValue<string>("Configuration:AuthorizationUrl")),
+                        AuthorizationUrl = new Uri($"{Environment.GetEnvironmentVariable("AUTHORIZATION_URL")}"),
                     }
                 }
             });
@@ -52,7 +52,7 @@ public class Program
         });
         });
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"ocelot.prod.json"));
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"{Environment.GetEnvironmentVariable("OCELOT_LOCATION")}"));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
@@ -63,7 +63,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                x.MetadataAddress = builder.Configuration.GetValue<string>("Configuration:MetadataAddress");
+                x.MetadataAddress = $"{Environment.GetEnvironmentVariable("METADATA_ADDRESS")}";
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
