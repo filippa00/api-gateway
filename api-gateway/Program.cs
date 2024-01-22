@@ -52,7 +52,8 @@ public class Program
         });
         });
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"{Environment.GetEnvironmentVariable("OCELOT_LOCATION")}"));
+        var ocelotLocation = Environment.GetEnvironmentVariable("OCELOT_LOCATION");
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"{ocelotLocation}"));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
