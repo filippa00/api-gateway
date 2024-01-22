@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication;
 using Extentions;
 using Prometheus;
+using k8s;
 
 public class Program
 {
@@ -18,6 +19,7 @@ public class Program
         {
             serverOptions.ListenAnyIP(8080); // Listen for HTTP on port 8080
         });
+
 
         // Add services to the container.
         builder.Services.AddControllers();
@@ -52,7 +54,7 @@ public class Program
         });
         });
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile($"{Environment.GetEnvironmentVariable("ocelot-location")}"));
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION")));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
