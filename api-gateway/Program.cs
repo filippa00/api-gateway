@@ -59,7 +59,7 @@ public class Program
 
         //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation") ?? Environment.GetEnvironmentVariable("OCELOT_LOCATION");
+        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation");
         builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(ocelotLocation));
         builder.Logging.AddConsole();
         builder.Services
@@ -71,7 +71,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress") ??  Environment.GetEnvironmentVariable("METADATA_ADDRESS");
+                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress");
 
                 x.MetadataAddress = metadataAddress;
 
@@ -107,15 +107,13 @@ public class Program
 
 
         app.MapControllers();
-        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
-        {
+
             app.UseSwaggerForOcelotUI(opt =>
             {
                 opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
                 opt.PathToSwaggerGenerator = "/swagger/docs";
             });
 
-        }
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseMetricServer();
