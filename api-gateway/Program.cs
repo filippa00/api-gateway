@@ -19,12 +19,16 @@ public class Program
             serverOptions.ListenAnyIP(8080); // Listen for HTTP on port 8080
         });
 
-
         // Add services to the container.
         builder.Services.AddControllers();
+
+        //Add ocelot for redirection
         builder.Services.AddOcelot();
+
+        //For the realms authorisation
         builder.Services.DecorateClaimAuthoriser();
 
+        //SwaggerUI
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gateway v1.0", Version = "v1" });
@@ -52,6 +56,8 @@ public class Program
 
         });
         });
+
+        //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
         builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()));
         builder.Logging.AddConsole();
