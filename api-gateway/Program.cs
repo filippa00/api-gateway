@@ -107,11 +107,15 @@ public class Program
 
 
         app.MapControllers();
-        app.UseSwaggerForOcelotUI(opt =>
+        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
         {
-            opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
-            opt.PathToSwaggerGenerator = "/swagger/docs";
-        });
+            app.UseSwaggerForOcelotUI(opt =>
+            {
+                opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
+                opt.PathToSwaggerGenerator = "/swagger/docs";
+            });
+
+        }
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseMetricServer();
