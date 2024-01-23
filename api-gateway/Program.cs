@@ -71,7 +71,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress");
+                var metadataAddress = "https://keycloak-keycloak.apps.ocp5-inholland.joran-bergfeld.com/realms/spiegelspel/.well-known/openid-configuration";
 
                 x.MetadataAddress = metadataAddress;
 
