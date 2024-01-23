@@ -59,12 +59,7 @@ public class Program
 
         //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation").ToString();
-        if (string.IsNullOrEmpty(ocelotLocation))
-        {
-            ocelotLocation = Environment.GetEnvironmentVariable("OCELOT_LOCATION").ToString();
-        }
-
+        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation") ?? Environment.GetEnvironmentVariable("OCELOT_LOCATION");
         builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(ocelotLocation));
         builder.Logging.AddConsole();
         builder.Services
@@ -76,11 +71,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress").ToString();
-                if (string.IsNullOrEmpty(ocelotLocation))
-                {
-                    metadataAddress = Environment.GetEnvironmentVariable("METADATA_ADDRESS").ToString();
-                }
+                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress") ??  Environment.GetEnvironmentVariable("METADATA_ADDRESS");
 
                 x.MetadataAddress = metadataAddress;
 
