@@ -59,7 +59,7 @@ public class Program
 
         //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()));
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()?? Environment.GetEnvironmentVariable("OCELOT_LOCATION").ToString()));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
@@ -70,7 +70,7 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                x.MetadataAddress = $"{Environment.GetEnvironmentVariable("MetadataAddress")}";
+                x.MetadataAddress = Environment.GetEnvironmentVariable("MetadataAddress")?? Environment.GetEnvironmentVariable("METADATA_ADDRESS");
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
