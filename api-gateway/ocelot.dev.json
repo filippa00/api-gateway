@@ -528,6 +528,55 @@
     //    "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
     //  }
     //}
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "answersapi",
+      "Config": [
+        {
+          "Name": "Answers Microservice",
+          "Version": "v1",
+          "Url": "http://answers-microservice-service.mg-development.svc.cluster.local:8080/swagger/doc.json"
+        }
+      ]
+    },
+
+    {
+      "Key": "cardsapi",
+      "Config": [
+        {
+          "Name": "Cards Microservice",
+          "Url": "http://cards-microservice.mg-development.svc.cluster.local:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "cardsetsapi",
+      "Config": [
+        {
+          "Name": "CardsSets Microservice",
+          "Url": "http://cards-microservice.mg-development.svc.cluster.local:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "themesapi",
+      "Config": [
+        {
+          "Name": "Themes Microservice",
+          "Url": "http://cards-microservice.mg-development.svc.cluster.local:8080/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "gameapi",
+      "Config": [
+        {
+          "Name": "Game Microservice",
+          "Url": "http://game-microservice.mg-development.svc.cluster.local:5000/swagger.json"
+        }
+      ]
+    }
   ]
 }
 

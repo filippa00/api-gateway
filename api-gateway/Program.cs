@@ -19,12 +19,16 @@ public class Program
             serverOptions.ListenAnyIP(8080); // Listen for HTTP on port 8080
         });
 
-
         // Add services to the container.
         builder.Services.AddControllers();
+
+        //Add ocelot for redirection
         builder.Services.AddOcelot();
+
+        //For the realms authorisation
         builder.Services.DecorateClaimAuthoriser();
 
+        //SwaggerUI
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gateway v1.0", Version = "v1" });
@@ -52,8 +56,11 @@ public class Program
 
         });
         });
+
+        //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()));
+        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation") ?? Environment.GetEnvironmentVariable("OCELOT_LOCATION");
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(ocelotLocation));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
@@ -64,7 +71,9 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                x.MetadataAddress = $"{Environment.GetEnvironmentVariable("MetadataAddress")}";
+                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress") ??  Environment.GetEnvironmentVariable("METADATA_ADDRESS");
+
+                x.MetadataAddress = metadataAddress;
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -98,11 +107,15 @@ public class Program
 
 
         app.MapControllers();
-        app.UseSwaggerForOcelotUI(opt =>
+        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
         {
-            opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
-            opt.PathToSwaggerGenerator = "/swagger/docs";
-        });
+            app.UseSwaggerForOcelotUI(opt =>
+            {
+                opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
+                opt.PathToSwaggerGenerator = "/swagger/docs";
+            });
+
+        }
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseMetricServer();
