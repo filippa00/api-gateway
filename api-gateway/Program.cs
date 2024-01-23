@@ -107,10 +107,10 @@ public class Program
 
 
         app.MapControllers();
-        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
-        {
-            app.UseSwaggerForOcelotUI();
-        }
+        //if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
+        //{
+        //    app.UseSwaggerForOcelotUI();
+        //}
 
         app.UseAuthentication();
         app.UseAuthorization();
