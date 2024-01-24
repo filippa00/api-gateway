@@ -1,13 +1,14 @@
 ﻿using Models;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace api_gateway_tests
 {
     public class BaseTestClass : IDisposable
     {
         protected HttpClient _httpClient;
-        protected string _testEnvironmentUrl;
-        protected const string _clientSecret = "Sqtplt6kSwTqtXubulAQv7dEuj7Byoyi";
+        protected const string _testEnvironmentUrl = "https://api-gateway-route-mg-development.apps.ocp5-inholland.joran-bergfeld.com";
+        protected const string _clientSecret = "JTr6gXberP0ovGgvV2KXRHihGNr8cgRq";
         protected const string _clientId = "spiegelspel";
         protected const string _adminPassword = "passworddev";
         protected Random _random;
@@ -15,8 +16,8 @@ namespace api_gateway_tests
 
         public BaseTestClass()
         {
-            _testEnvironmentUrl = "https://api-gateway-route-mg-development.apps.ocp5-inholland.joran-bergfeld.com";
             _random = new Random();
+            ServicePointManager.ServerCertificateValidationCallback += (o, c, ch, er) => true;
             _httpClient = new HttpClient(new HttpClientHandler
             {
                 ServerCertificateCustomValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true

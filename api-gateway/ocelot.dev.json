@@ -470,64 +470,64 @@
     }
 
 
-    //// Game
-    //{
-    //  "DownstreamPathTemplate": "/game",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "game-microservice.mg-api-group.svc.cluster.local",
-    //      "Port": 5000
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/api/game",
-    //  "UpstreamHttpMethod": [ "POST", "GET" ],
-    //  "SwaggerKey": "gameapi",
-    //  "AuthenticationOptions": {
-    //    "AuthenticationProviderKey": "Bearer"
-    //  },
-    //  "RouteClaimsRequirement": {
-    //    "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-    //  }
-    //},
-    //{
-    //  "DownstreamPathTemplate": "/game/{id}",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "game-microservice.mg-api-group.svc.cluster.local",
-    //      "Port": 5000
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/api/game/{id}",
-    //  "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
-    //  "SwaggerKey": "gameapi",
-    //  "AuthenticationOptions": {
-    //    "AuthenticationProviderKey": "Bearer"
-    //  },
-    //  "RouteClaimsRequirement": {
-    //    "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
-    //  }
-    //},
-    //{
-    //  "DownstreamPathTemplate": "/metrics",
-    //  "DownstreamScheme": "http",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "game-microservice.mg-api-group.svc.cluster.local",
-    //      "Port": 5000
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/api/game/metrics",
-    //  "UpstreamHttpMethod": [ "GET" ],
-    //  "SwaggerKey": "gameapi",
-    //  "AuthenticationOptions": {
-    //    "AuthenticationProviderKey": "Bearer"
-    //  },
-    //  "RouteClaimsRequirement": {
-    //    "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
-    //  }
-    //}
+    // Game
+    {
+      "DownstreamPathTemplate": "/game",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-microservice.mg-api-group.svc.cluster.local",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/game",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "gameapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/game/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-microservice.mg-api-group.svc.cluster.local",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/game/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "gameapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/metrics",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game-microservice.mg-development.svc.cluster.local",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/game/metrics",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "gameapi",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "http///schemas.microsoft.com/ws/2008/06/identity/claims/role": "superadmin"
+      }
+    }
   ],
   "SwaggerEndPoints": [
     {
@@ -573,7 +573,7 @@
       "Config": [
         {
           "Name": "Game Microservice",
-          "Url": "http://game-microservice.mg-development.svc.cluster.local:5000/swagger.json"
+          "Url": "http://game-microservice.mg-development.svc.cluster.local:8080/swagger.json"
         }
       ]
     }
