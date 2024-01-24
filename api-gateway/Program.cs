@@ -61,11 +61,11 @@ public class Program
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
         if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
         {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION").ToString()));
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile("ocelot.dev.json"));
         }
         else
         {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()));
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile("ocelot.prod.json"));
         }
         
         builder.Logging.AddConsole();
