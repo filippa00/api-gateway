@@ -61,7 +61,7 @@ public class Program
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
         if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
         {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION")));
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelot-location-dev")));
         }
         else
         {
