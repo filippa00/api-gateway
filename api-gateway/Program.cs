@@ -59,8 +59,15 @@ public class Program
 
         //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation") ?? Environment.GetEnvironmentVariable("OCELOT_LOCATION");
-        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(ocelotLocation));
+        if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
+        {
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION")));
+        }
+        else
+        {
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation")));
+        }
+        
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
@@ -71,9 +78,16 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress") ??  Environment.GetEnvironmentVariable("METADATA_ADDRESS");
 
-                x.MetadataAddress = metadataAddress;
+                if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("MetadataAddress")))
+                {
+                    
+                    x.MetadataAddress = Environment.GetEnvironmentVariable("METADATA_ADDRESS");
+                }
+                else
+                {
+                    x.MetadataAddress = Environment.GetEnvironmentVariable("MetadataAddress");
+                }
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
