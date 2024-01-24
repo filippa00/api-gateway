@@ -61,11 +61,11 @@ public class Program
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
         if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
         {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelot-location-dev")));
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("OCELOT_LOCATION").ToString()));
         }
         else
         {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation")));
+            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(Environment.GetEnvironmentVariable("ocelotLocation").ToString()));
         }
         
         builder.Logging.AddConsole();
@@ -82,12 +82,13 @@ public class Program
                 if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("MetadataAddress")))
                 {
                     
-                    x.MetadataAddress = Environment.GetEnvironmentVariable("METADATA_ADDRESS");
+                    x.MetadataAddress = Environment.GetEnvironmentVariable("METADATA_ADDRESS").ToString();
                 }
                 else
                 {
-                    x.MetadataAddress = Environment.GetEnvironmentVariable("MetadataAddress");
+                    x.MetadataAddress = Environment.GetEnvironmentVariable("MetadataAddress").ToString();
                 }
+
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
