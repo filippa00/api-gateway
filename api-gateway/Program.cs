@@ -59,15 +59,8 @@ public class Program
 
         //Configure swagger with ocelot to see all endpoints
         builder.Services.AddSwaggerForOcelot(builder.Configuration);
-        if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
-        {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile("ocelot.dev.json"));
-        }
-        else
-        {
-            builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile("ocelot.prod.json"));
-        }
-        
+        var ocelotLocation = Environment.GetEnvironmentVariable("ocelotLocation") ?? Environment.GetEnvironmentVariable("OCELOT_LOCATION");
+        builder.WebHost.ConfigureAppConfiguration(configure => configure.AddJsonFile(ocelotLocation));
         builder.Logging.AddConsole();
         builder.Services
             .AddAuthentication(options =>
@@ -78,17 +71,9 @@ public class Program
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
+                var metadataAddress = Environment.GetEnvironmentVariable("MetadataAddress") ??  Environment.GetEnvironmentVariable("METADATA_ADDRESS");
 
-                if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("MetadataAddress")))
-                {
-                    
-                    x.MetadataAddress = Environment.GetEnvironmentVariable("METADATA_ADDRESS").ToString();
-                }
-                else
-                {
-                    x.MetadataAddress = Environment.GetEnvironmentVariable("MetadataAddress").ToString();
-                }
-
+                x.MetadataAddress = metadataAddress;
 
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -122,15 +107,13 @@ public class Program
 
 
         app.MapControllers();
-        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ocelotLocation")))
-        {
+
             app.UseSwaggerForOcelotUI(opt =>
             {
                 opt.DownstreamSwaggerEndPointBasePath = "/gateway/swagger/docs";
                 opt.PathToSwaggerGenerator = "/swagger/docs";
             });
 
-        }
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseMetricServer();
